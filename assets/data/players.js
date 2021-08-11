@@ -111,12 +111,4 @@ export const players = [
     position: 'FWD',
     totalPoints: 20
   },
-  {
-    id: '15',
-    name: 'L. Messi',
-    match: 'FRA v SUI',
-    price: 13_100_000,
-    position: 'FWD',
-    totalPoints: 33
-  },
 ]

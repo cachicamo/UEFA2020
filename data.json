@@ -1,15 +1,6 @@
+
 {
-    "get": "players",
-    "parameters": {
-        "league": "4",
-        "season": "2020"
-    },
-    "errors": [],
-    "results": 20,
-    "paging": {
-        "current": 1,
-        "total": 27
-    },
+    "response": {
     "response": [
         {
             "player": {
@@ -49,7 +40,7 @@
                         "lineups": 0,
                         "minutes": 0,
                         "number": null,
-                        "position": "Attacker",
+                        "position": "Defender",
                         "rating": "6.700000",
                         "captain": false
                     },
@@ -334,7 +325,7 @@
                         "lineups": 0,
                         "minutes": 0,
                         "number": null,
-                        "position": "Defender",
+                        "position": "Attacker",
                         "rating": null,
                         "captain": false
                     },
@@ -524,7 +515,7 @@
                         "lineups": 0,
                         "minutes": 0,
                         "number": null,
-                        "position": "MidFielder",
+                        "position": "Defender",
                         "rating": "7.325000",
                         "captain": false
                     },
@@ -714,7 +705,7 @@
                         "lineups": 0,
                         "minutes": 0,
                         "number": null,
-                        "position": "Attacker",
+                        "position": "Defender",
                         "rating": "6.833333",
                         "captain": false
                     },
@@ -999,7 +990,7 @@
                         "lineups": 0,
                         "minutes": 0,
                         "number": null,
-                        "position": "MidFielder",
+                        "position": "Goalkeeper",
                         "rating": null,
                         "captain": false
                     },
@@ -1474,7 +1465,7 @@
                         "lineups": 0,
                         "minutes": 1,
                         "number": null,
-                        "position": "MidFielder",
+                        "position": "Goalkeeper",
                         "rating": "7.300000",
                         "captain": false
                     },
@@ -1569,7 +1560,7 @@
                         "lineups": 0,
                         "minutes": 110,
                         "number": null,
-                        "position": "MidFielder",
+                        "position": "Defender",
                         "rating": "7.420000",
                         "captain": false
                     },
@@ -1759,7 +1750,7 @@
                         "lineups": 3,
                         "minutes": 226,
                         "number": null,
-                        "position": "Attacker",
+                        "position": "Defender",
                         "rating": "7.333333",
                         "captain": false
                     },
@@ -1912,4 +1903,5 @@
             ]
         }
     ]
+    }
 }

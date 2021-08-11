@@ -1,14 +1,41 @@
 import React from 'react'
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, Image, StyleSheet, Pressable } from 'react-native'
+import { useRecoilState } from 'recoil';
+import { myFormationState, myPlayersState } from '../atoms/MyTeam'
 import { Player } from '../types';
 
 interface Props {
   player: Player;
 };
 
-const PlayerListItem = ({ player }: Props) => (
-  <View style={styles.container}>
-    <Image  source={{ uri: `https://media.api-sports.io/football/players/${player.id}.png`}} style={styles.image} />
+const PlayerListItem = ({ player }: Props) => {
+  const [myPlayers, setMyPlayers] = useRecoilState(myPlayersState);
+  const [myFormation] = useRecoilState(myFormationState)
+
+  const numberOfPlayersOnPos = myPlayers.filter(
+    (p) => p.position === player.position
+  ).length;
+  
+  const onPress = () => {
+    setMyPlayers((curPlayers) => {
+      if(curPlayers.some((p) => p.id === player.id)) {
+        return curPlayers.filter(p => p.id !== player.id)
+      } else {
+        // CHECK if possible to Add
+        if(numberOfPlayersOnPos < myFormation[player.position]) {
+          return [...curPlayers, player]
+        }
+        return curPlayers;
+      }
+    })
+  };
+
+  const isSelected = myPlayers.some((p) => p.id === player.id);
+  console.log(player)
+  return (
+  <Pressable onPress={onPress} style={[styles.container, { backgroundColor: isSelected ? '#d170db' : 'white'}]}>
+    {/* <Image  source={{ uri: `https://media.api-sports.io/football/players/${player.id}.png`}} style={styles.image} /> */}
+    <Image  source={{ uri: player.photo}} style={styles.image} />
 
     <View style={styles.nameContainer}>
       <Text style={styles.name}>{player.name}</Text>
@@ -22,9 +49,9 @@ const PlayerListItem = ({ player }: Props) => (
       <Text>{player.position}</Text>
     </View>
 
-    <Text style={styles.points}>{player.totalPoints}</Text>
-  </View>
-)
+    <Text style={styles.points}>{player.totalPoints.toString()}</Text>
+  </Pressable>
+)};
 
 const styles = StyleSheet.create({
   container: { 
@@ -65,4 +92,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PlayerListItem
+export default PlayerListItem;
