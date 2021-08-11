@@ -3,7 +3,6 @@ import { atom, selector } from "recoil";
 // import { players } from '../assets/data/players';
 // import response from '../assets/data/response.json';
 //    use return response.response.map
-// 49ebf285acmsh021f8634355a7d7p1b67dejsn95db9dce3536
 
 
 const pos2pos = {
@@ -30,7 +29,7 @@ export const allPlayersState = selector({
       // "method": "GET",
       // // "headers": {
       // //   "x-rapidapi-key": 
-      // //     "49ebf285acmsh021f8634355a7d7p1b67dejsn95db9dce3536",
+      // //     "<your api key>",
       // //   "x-rapidapi-host": 
       // //     "api-football-v1.p.rapidapi.com"
           
